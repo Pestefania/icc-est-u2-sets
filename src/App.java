@@ -57,13 +57,15 @@ public class App {
         System.out.println("----- Agenda de Contactos -----");
         Set<Contacto> agenda = new TreeSet<>(new ContactoComparator());
 
-        Contacto c1 = new Contacto("Sebastian", "Patiño", "0902890397");
-        Contacto c2 = new Contacto("Paulina", "lopez", "0992960046");
-        Contacto c3 = new Contacto("Luis", "Naranjo", "0901830220");
+        Contacto c1 = new Contacto("Pedro", "Lopez", "22222222222");
+        Contacto c2 = new Contacto(" Luis", "Perez", "0992960046");
+        Contacto c3 = new Contacto("Ana", "Perez", "1111111111");
+        Contacto c4 = new Contacto("Pedro", "Lopez", "1234567891");
 
         agenda.add(c1);
         agenda.add(c2);
         agenda.add(c3);
+        agenda.add(c4);
 
         for (Contacto contacto : agenda) {
             System.out.println(contacto);

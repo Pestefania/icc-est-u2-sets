@@ -1,5 +1,7 @@
 package Models;
 
+import java.util.Objects;
+
 public class Contacto {
     private String nombre;
     private String apellido;
@@ -24,8 +26,8 @@ public class Contacto {
     }
 
     @Override
-    public String toString() {
-        return nombre + " " + apellido + " (" + telefono + ")";
+    public String toString() { //El toString retorna los atributos que deseamos
+        return nombre + " " + apellido + " - " + telefono;
     }
 
     @Override
@@ -33,12 +35,15 @@ public class Contacto {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
         Contacto contacto = (Contacto) obj;
-        return telefono.equals(contacto.telefono);
+        return Objects.equals(nombre, contacto.nombre) &&
+               Objects.equals(apellido, contacto.apellido) &&
+               Objects.equals(telefono, contacto.telefono);
+
     }
 
     @Override
     public int hashCode() {
-        return telefono.hashCode();
+        return Objects.hash(nombre, apellido, telefono);
     }
 }
 
